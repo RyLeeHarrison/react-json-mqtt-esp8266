@@ -1,4 +1,4 @@
-# React MQTT  Potentiometer
+# React JSON MQTT Potentiometer
 Using React.js to control the brightness of the ESP8266 onboard led,
 in this case, with JSON over MQTT.
 
