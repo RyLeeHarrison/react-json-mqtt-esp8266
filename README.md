@@ -2,7 +2,7 @@
 Using React.js to control the brightness of the ESP8266 onboard led,
 in this case, with JSON over MQTT.
 
-![Browser Slider](/screenshot.png?raw=true)
+![Browser Slicer](/screenshot.png?raw=true)
 
 ## Documentation
 
