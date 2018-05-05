@@ -6,9 +6,9 @@ in this case, with JSON over MQTT.
 
 ## Documentation
 
-React documentation [on the website](https://reactjs.org/docs).
-ArduinoJson documentation [on the website](https://arduinojson.org/doc).
-PubSubClient documentation [on the website](https://pubsubclient.knolleary.net/api.html).
+- React documentation [on the website](https://reactjs.org/docs).
+- ArduinoJson documentation [on the website](https://arduinojson.org/doc).
+- PubSubClient documentation [on the website](https://pubsubclient.knolleary.net/api.html).
 
 ##  Installation
 npm packages
