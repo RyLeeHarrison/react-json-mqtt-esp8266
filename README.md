@@ -2,13 +2,13 @@
 Using React.js to control the brightness of the ESP8266 onboard led,
 in this case, with JSON over MQTT.
 
-![Browser Slider](/screenshot.png?raw=true)
+![Browser Slicer](/screenshots/slider.jpg?raw=true)
 
 ## Documentation
 
-React documentation [on the website](https://reactjs.org/docs).
-ArduinoJson documentation [on the website](https://arduinojson.org/doc).
-PubSubClient documentation [on the website](https://pubsubclient.knolleary.net/api.html).
+- React documentation [React](https://reactjs.org/docs).
+- ArduinoJson documentation [ArduinoJson](https://arduinojson.org/doc).
+- PubSubClient documentation [PubSubClient](https://pubsubclient.knolleary.net/api.html).
 
 ##  Installation
 npm packages
