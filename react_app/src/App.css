@@ -1,0 +1,65 @@
+.App {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  text-alignt: center;
+}
+
+
+.SliderBox {
+  width: 100%;
+  margin: 50% auto;
+}
+
+.Slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #d7dcdf;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  -webkit-transition: .5s;
+  transition: opacity .5s;
+}
+
+.Slider:hover {
+  opacity: 1;
+}
+
+.Slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2c3e50;
+  cursor: pointer;
+  transition: background .15s ease-in-out;
+}
+
+.Slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #2c3e50;
+  cursor: pointer;
+}
+
+.Level, .Status {
+  text-align: center;
+  font-family: "Quantico", sans-serif;
+  font-size: 16px;
+  display: block;
+  margin: auto;
+  padding: 10px 0px;
+  width: 100%;
+  color: #2c3e50;
+}
+  
+
+.Status {
+  color: #9e9e9e;
+  font-size: 12px;
+}
