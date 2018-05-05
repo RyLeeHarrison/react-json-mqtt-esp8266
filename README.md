@@ -17,7 +17,7 @@ $ cd react_app
 $ npm install
 $ npm start
 ```
-Open arduino sketch [Arduino IDE](https://www.arduino.cc/en/Main/Software)
+Open the arduino sketch ([Arduino IDE](https://www.arduino.cc/en/Main/Software))
 
 ## Arduino libraries
 You will need to install the following Arduino libraries.
