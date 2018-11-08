@@ -52,8 +52,8 @@ void setup_wifi() {
 }
 
 void callback(char* topic, byte* payload, unsigned int length) {
-  StaticJsonBuffer<BUFFER_SIZE> jsonBuffer;
-  
+  StaticJsonDocument<BUFFER_SIZE> doc;
+
   Serial.print("Message arrived [");
   Serial.print(topic);
   Serial.print("] ");
@@ -65,15 +65,19 @@ void callback(char* topic, byte* payload, unsigned int length) {
   message[length] = '\0';
   
   Serial.println(message);
+
+  DeserializationError error = deserializeJson(doc, message);
   
-  JsonObject& root = jsonBuffer.parseObject(message);
-  
-  if (!root.success()) {
-    Serial.println("parseObject() failed");
+  if (error) {
+    Serial.print(F("deserializeJson() failed: "));
+    Serial.println(error.c_str());
+    return;
   }
   
+  JsonObject root = doc.as<JsonObject>();
+
   if (root.containsKey("brightness")) {
-    byte newBrightness = constrain(root["brightness"], 0, 255);
+    byte newBrightness = constrain(root[String("brightness")], 0, 255);
     analogWrite(LED_PIN, (255 - newBrightness));
     brightness = newBrightness;
     Serial.print("Brightness: ");
@@ -86,13 +90,17 @@ void callback(char* topic, byte* payload, unsigned int length) {
 }
 
 void sendSettings() {
-  StaticJsonBuffer<BUFFER_SIZE> jsonBuffer;
-  JsonObject& root = jsonBuffer.createObject();
-
-  root["brightness"] = brightness;
+  StaticJsonDocument<200> doc;
+  JsonObject root = doc.to<JsonObject>();
   
-  char buffer[root.measureLength() + 1];
-  root.printTo(buffer, sizeof(buffer));
+  root["brightness"] = brightness;
+
+  const size_t bufferSize = JSON_OBJECT_SIZE(1);
+  
+  char buffer[bufferSize];
+  
+  serializeJson(root, buffer);
+  
   client.publish(MQTT_TOPIC_OUT, buffer, true);
 }
 
